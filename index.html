@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en" ng-app="tlist">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Demo</title>
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="js/app.js"></script>
+</head>
+<body>
+<form ng-submit="submit()" ng-controller="addController">
+    <input type="text" ng-model="text" name="text" placeholder="What needs to be done?"/>
+    <!--<p>{{taskList}}</p>-->
+    <ul ng-repeat="task in taskList track by $index">
+        <li>
+        <input type="button" value="Done" ng-click="myStyle={color:'green'}">
+        <span ng-style="myStyle">{{task}}</span>
+        <a ng-click="remove(task)">Delete</a>
+        </li>
+    </ul>
+</form>
+</body>
+</html>
+
